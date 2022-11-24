@@ -1,4 +1,4 @@
-my_list = [1, 2, 3, 4, 9, 6, 5]
+my_list = [1, 2, 3, 444, 9, 6, 5, 12, 65, 13, 8, 23]
 
 l = []
 
@@ -55,3 +55,24 @@ def count_recursion(arr: list) -> int:
 
 print("Рекурсивный подсчет элементов: ", count_elements_in_list(my_list))
 print(count_elements_in_list(l))
+
+
+def max_element_in_list(arr: list) -> int:
+    maximum = 0
+    for i in arr:
+        if i > maximum:
+            maximum = i
+    return maximum
+
+
+print("Max element from list: ", max_element_in_list(my_list))
+
+
+def max_recursion(arr: list) -> int:
+    if len(arr) == 1:
+        return arr[0]
+    m = max_recursion(arr[1:])
+    return m if m > arr[0] else arr[0]
+
+
+print("Max recursion: ", max_recursion(my_list))
